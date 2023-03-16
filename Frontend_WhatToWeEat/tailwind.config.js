@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config; */
 
 const tailwindConfig = {
@@ -21,4 +20,5 @@ const tailwindConfig = {
   },
   plugins: [],
 };
+// eslint-disable-next-line no-undef
 module.exports = tailwindConfig;

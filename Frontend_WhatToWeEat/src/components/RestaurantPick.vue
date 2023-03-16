@@ -56,15 +56,6 @@
         </n-icon>
         新增餐廳
       </n-button>
-      <n-button
-        type="primary"
-        class="bg-wte-primary"
-      >
-        <n-icon>
-          <pencil />
-        </n-icon>
-        編輯餐廳
-      </n-button>
     </div>
 
     <!-- 手機板功能鍵區 -->
@@ -91,16 +82,6 @@
       >
         <n-icon>
           <Add />
-        </n-icon>
-      </n-button>
-      <n-button
-        circle
-        size="large"
-        type="primary"
-        class="bg-wte-primary"
-      >
-        <n-icon>
-          <pencil />
         </n-icon>
       </n-button>
     </div>
@@ -156,7 +137,7 @@
               type="primary"
               size="large"
               class="bg-wte-primary ml-auto"
-              @click="postRestaurant"
+              @click="postRestaurantButton"
             >
               送出
             </n-button>
@@ -202,6 +183,11 @@ function getRecommendButton() {
   isPick.value = true;
 }
 
+function postRestaurantButton() {
+  postRestaurant();
+  clearRestaurantForm();
+}
+
 const getRestaurantPick = async () => {
   try {
     const res = await apiGetRestaurantPick();
@@ -219,6 +205,13 @@ const postRestaurant = async () => {
   } catch (err) {
     console.error(err);
   }
+};
+
+const clearRestaurantForm = () => {
+  restaurantForm.name = "";
+  restaurantForm.phone = "";
+  restaurantForm.address = "";
+  restaurantForm.image = "";
 };
 </script>
 

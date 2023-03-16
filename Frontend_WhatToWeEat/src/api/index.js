@@ -14,6 +14,11 @@ instance.interceptors.request.use(function (config) {
 export const apiRegister = (data) => instance.post("/register", data);
 export const apiLogin = (data) => instance.post("/login", data);
 export const apiAuthentication = () => instance.get("/authentication");
+
 export const apiGetAllRestaurant = () => instance.get("/restaurants");
-export const apiPostRestaurant = (data) => instance.post("/restaurants", data);
 export const apiGetRestaurantPick = () => instance.get("/recommendation");
+export const apiPostRestaurant = (data) => instance.post("/restaurants", data);
+export const apiPutRestaurant = (data, id) =>
+  instance.put("/restaurants/" + id);
+export const apiDeleteRestaurant = (data, id) =>
+  instance.delete("/restaurants/" + id);
